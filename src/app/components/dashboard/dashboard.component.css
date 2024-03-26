@@ -1,0 +1,138 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .task-form {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .task-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .task-card {
+    width: calc(100% - 20px);
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .task-card h3 {
+    margin-top: 0;
+  }
+  
+  .task-icons {
+    margin-top: 10px;
+  }
+  
+  .task-icons button {
+    margin-right: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .task-icons button:hover {
+    color: #007bff;
+  }
+
+ /* dashboard.component.css */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+  }
+  
+  .card-body {
+    margin-top: 10px;
+  }
+  
+  .card-body p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card-footer button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .card-footer button:hover {
+    color: #5cb85c;
+  }
+  /* dashboard.component.css */
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 5px;
+    color: black;
+  }
+  
+  .icon-button:hover {
+    color: #5cb85c;
+  }
+  

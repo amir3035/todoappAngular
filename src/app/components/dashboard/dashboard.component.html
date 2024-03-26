@@ -1,0 +1,52 @@
+<br>
+<div class="container">
+    <h2>Add Task</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="taskForm" class="task-form">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" formControlName="title" placeholder="Enter task title" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" formControlName="description" placeholder="Enter task description" required>
+      </div>
+      <div class="form-group">
+        <label for="dueDate">Due Date</label>
+        <input type="text" id="dueDate" formControlName="dueDate" placeholder="Enter due date (e.g., 12-March-2023)" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>
+  
+    <hr>
+  
+    <h2>Tasks</h2>
+    <!-- dashboard.component.html -->
+
+<div class="card-container">
+    <div *ngFor="let task of tasks" class="card">
+      <div class="card-header">
+        <h3>{{ task.title }}</h3>
+      </div>
+      <div class="card-body">
+        <p>{{ task.description }}</p>
+        <p>Due Date: {{ task.dueDate }}</p>
+      </div>
+      <div class="card-footer">
+        <div>
+          <button (click)="markAsImportant(task._id)" class="icon-button">
+            <i class="fas fa-star"></i>
+          </button>
+          <button (click)="markAsComplete(task._id)" class="icon-button">
+            <i class="fas fa-check"></i>
+          </button>
+          <button (click)="deleteTask(task._id)" class="icon-button">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  </div>
+  
