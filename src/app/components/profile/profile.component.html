@@ -1,0 +1,22 @@
+<div class="profile-container" *ngIf="user; else loading">
+  <div class="profile-card">
+    <img
+      class="profile-image"
+      [src]="'http://localhost:8000/' + user.image"
+      alt="Profile Image"
+    />
+    <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Phone:</strong> {{ user.phone_Number }}</p>
+    <p><strong>Created At:</strong> {{ user.createdAt | date: 'medium' }}</p>
+    <button class="dashboard-button" (click)="goToDashboard()">
+      Go to Dashboard
+    </button>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="loading">
+    <p>Loading profile...</p>
+  </div>
+</ng-template>

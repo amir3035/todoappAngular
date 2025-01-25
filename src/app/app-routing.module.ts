@@ -4,17 +4,19 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AboutComponent } from './components/about/about.component';
 import { RegisterComponent } from './components/register/register.component';
-import { ForgotComponent } from './components/forgot/forgot.component';
-import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ForgotPassComponent } from './components/forgot-pass/forgot-pass.component';
+import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
 
 const routes: Routes = [
   { path:'login', component:LoginComponent},
+  { path:'profile', component:ProfileComponent},
   { path:'dashboard', component: DashboardComponent },
   { path:'about', component:AboutComponent},
-  { path:'register', component:RegisterComponent},
-  { path:'forgotPassword', component:ForgotComponent},
-  { path:'resetPassword',component:ResetpasswordComponent},
-  
+  { path:'register', component:RegisterComponent},  
+  { path:'forgotPassword',component:ForgotPassComponent},
+  { path:'resetpassword',component:ResetPassComponent},
+    
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 

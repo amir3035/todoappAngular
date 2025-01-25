@@ -25,9 +25,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    console.log('calling....')
+    
   }
+
 
   onSubmit(): void {
     if (this.loginForm.valid) {
@@ -40,13 +40,20 @@ export class LoginComponent implements OnInit {
         response => {
           if (response.status === 200) {
             // Save token in local storage
-            localStorage.setItem('accessToken', response.accessToken);
-
-            // Display success message
-            alert(response.message);
-
-            // Redirect to dashboard
-            this.router.navigate(['/dashboard']);
+            Promise.resolve()
+            .then(() => {
+              localStorage.setItem('accessToken', response.accessToken);
+            })
+            .then(() => {
+              // Display success message
+              alert(response.message);
+        
+              // Redirect to dashboard
+              this.router.navigate(['/dashboard']);
+            })
+            .catch((error) => {
+              console.error('Error storing token:', error);
+            });
           } else {
             // Display error message
            alert(response.message);

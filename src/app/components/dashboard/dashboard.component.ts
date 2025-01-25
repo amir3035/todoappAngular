@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,13 +13,17 @@ export class DashboardComponent implements OnInit {
   tasks: any[] = [];
   token: string | null;
 
-  constructor(private http: HttpClient, private formBuilder: FormBuilder) {
+  constructor(private http: HttpClient, private formBuilder: FormBuilder,private router:Router) {
     this.taskForm = this.formBuilder.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
       dueDate: ['', Validators.required]
     });
     this.token = localStorage.getItem('accessToken');
+    // if(!this.token){
+    //   alert('Failed to fetch user details. Please login.');
+    //   this.router.navigate(['/login']);
+    // }
   }
 
   ngOnInit(): void {
@@ -40,6 +45,7 @@ export class DashboardComponent implements OnInit {
         },
         error => {
           console.error('Error:', error);
+  
         }
       );
     }

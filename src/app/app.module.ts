@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ForgotComponent } from './components/forgot/forgot.component';
-import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './components/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ForgotPassComponent } from './components/forgot-pass/forgot-pass.component';
+import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
+
+
 
 @NgModule({
   declarations: [
@@ -18,9 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     LoginComponent,
     DashboardComponent,
-    ForgotComponent,
-    ResetpasswordComponent,
-    AboutComponent
+    AboutComponent,
+    ProfileComponent,
+    ForgotPassComponent,
+    ResetPassComponent,    
   ],
   imports: [
     BrowserModule,
