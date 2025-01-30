@@ -45,6 +45,7 @@ p {
 /* Dashboard button */
 .dashboard-button {
   margin-top: 20px;
+  margin-right: 10px;
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
@@ -64,4 +65,21 @@ p {
   text-align: center;
   font-size: 18px;
   color: #777;
+}
+
+.delete-button {
+  margin-top: 20px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #983232;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: darkred;
 }

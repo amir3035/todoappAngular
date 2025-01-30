@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
   user: any = null; // Holds the user data
   apiUrl = 'http://localhost:8000/api/todos/getuser'; // API endpoint to fetch user details
-
+  delUrl= 'http://localhost:8000/api/todos/deleteuser'
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
@@ -45,5 +45,25 @@ export class ProfileComponent implements OnInit {
   // Redirect to dashboard
   goToDashboard(): void {
     this.router.navigate(['/dashboard']);
+  }
+  deleteUser(): void{
+    alert("Are you sure you want to delete your account")
+    const token = localStorage.getItem('accessToken');
+    this.http
+      .delete(this.delUrl, { headers: { Authorization: `Bearer ${token}` } })
+      .subscribe(
+        (response: any) => {
+          if (response.status === 200) {
+            this.user = response.data; // Assign user data
+          }
+        },        
+        (error) => {
+          console.error('Error fetching user details:', error);
+          alert(error);
+          this.router.navigate(['/login']);
+        }
+      );
+      localStorage.removeItem('accessToken');
+      this.router.navigate(['/login']);
   }
 }

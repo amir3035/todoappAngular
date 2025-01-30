@@ -32,6 +32,7 @@ export class RegisterComponent {
   onSubmit(): void {
     if (this.registerForm.valid) {
       const formData = new FormData();
+      console.log(formData,'data')
   
       // Append form data to the FormData object
       Object.keys(this.registerForm.value).forEach(key => {
@@ -47,8 +48,8 @@ export class RegisterComponent {
   
       this.http.post<any>('http://localhost:8000/api/todos/createuser', formData, { headers }).subscribe(
         response => {
-          console.log(response);
           if (response.status === 200) {
+            localStorage.setItem('accessToken', response.accessToken);
             this.router.navigate(['/dashboard']);
           }
         },
